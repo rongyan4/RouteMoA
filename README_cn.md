@@ -12,10 +12,14 @@
 - [RouteMoA](#routemoa)
   - [目录](#目录)
   - [环境安装](#环境安装)
-  - [快速开始](#快速开始)
+  - [快速开始——小模型池](#快速开始小模型池)
     - [1. 部署 LLM 模型](#1-部署-llm-模型)
     - [2. 启动 RouteMoA 服务](#2-启动-routemoa-服务)
     - [3. 模型评测](#3-模型评测)
+  - [快速开始——大模型池](#快速开始大模型池)
+    - [1. 配置 API 访问](#1-配置-api-访问)
+    - [2. 启动服务](#2-启动服务)
+    - [3. 模型评测](#3-模型评测-1)
   - [路由模型训练](#路由模型训练)
   - [致谢](#致谢)
 
@@ -31,18 +35,22 @@
 conda create -n YOUR_ENV_NAME python=3.10 -y
 conda activate YOUR_ENV_NAME
 
-# 安装 OpenCompass 评测框架
-cd opencompass 
+# 安装 OpenCompass 评测框架（用于小模型池实验）
+cd opencompass
 pip install -e .
 
-# 安装 EMoA 核心模块
+# 安装 EMoA 核心模块（小模型池）
 cd ../emoa
+pip install -e .
+
+# 安装 EMoA 大模型池模块
+cd ../emoa_large
 pip install -e .
 ```
 
 ---
 
-## 快速开始
+## 快速开始——小模型池
 
 ### 1. 部署 LLM 模型
 
@@ -70,7 +78,7 @@ huggingface-cli download Qwen/Qwen2.5-Coder-7B-Instruct \
   --local-dir </path/to/your/local/checkpoint/folder>/Qwen2.5-Coder-7B-Instruct
 
 huggingface-cli download Qwen/Qwen2.5-Math-7B-Instruct \
-  --local-dir </path/to/your/local/checkpoint/folder>/Qwen2.5-Math-7B-Instruct 
+  --local-dir </path/to/your/local/checkpoint/folder>/Qwen2.5-Math-7B-Instruct
 
 # 下载 Gemma 和 Ministral 模型
 huggingface-cli download google/gemma-2-9b-it \
@@ -135,6 +143,118 @@ python bill_stat.py
 ```
 
 > **关于可复现性的说明：** 为了证明我们实验的可复现性，我们在[这里](https://drive.google.com/file/d/1QAIy1lxqvXrPFoQj0g6tjHXMWxowH0Je/view?usp=drive_link)提供了完整的 OpenCompass 实验评估结果（eval result），你可以下载后进行验证和查看。
+
+---
+
+## 快速开始——大模型池
+
+大模型池实验通过调用外部 LLM API（如 DeepSeek、Qwen 等）来实现，无需在本地部署模型。相关代码均位于 `emoa_large/` 目录下。
+
+### 1. 配置 API 访问
+
+**a) 安装依赖：**
+```bash
+cd emoa_large
+pip install -e .
+```
+
+**b) 填写 API 配置**（`emoa_large/configs/api_info.csv`）：
+
+打开该文件，将每个模型对应的 `YOUR_API_BASE_URL` 和 `YOUR_API_KEY` 替换为你实际的 API 端点和密钥。该文件采用标准的 OpenAI 兼容格式：
+
+```
+model,model_name,model_id,input_price,output_price,api_type,api_base,api_key
+deepseek-ai/DeepSeek-V3-0324,deepseek-v3-0324,,0.28,1.14,openai,https://api.deepseek.com/v1,YOUR_KEY
+...
+```
+
+你无需配置全部 15 个模型——只需配置你打算使用的模型，并在相应的 config JSON 文件中更新 `candidate_models` 列表即可。
+
+**c) 下载路由模型权重**（仅 RouteMoA 需要）：
+
+从 [Google Drive](YOUR_GOOGLE_DRIVE_LINK_HERE) 下载 `router_large.pth`，并将其放置到：
+```
+emoa_large/weights/router_large.pth
+```
+
+**d) 下载路由骨干网络**（`microsoft/mdeberta-v3-base`）：
+```bash
+huggingface-cli download microsoft/mdeberta-v3-base --local-dir /path/to/mdeberta-v3-base
+```
+然后将 `emoa_large/configs/routemoa.json` 中的 `router_backbone` 修改为本地路径，或保持 `"microsoft/mdeberta-v3-base"` 以自动从 HuggingFace 下载。
+
+### 2. 启动服务
+
+三种方法均暴露兼容 OpenAI 的 `/v1/chat/completions` 接口。
+
+**MoA**（基线方法）：
+```bash
+cd emoa_large
+python3 -m emoa.serve.app_moa --config configs/moa.json --host 0.0.0.0 --port 10078
+```
+
+**RouteMoA**（本文方法）：
+```bash
+cd emoa_large
+python3 -m emoa.serve.app_routemoa --config configs/routemoa.json --host 0.0.0.0 --port 10079
+```
+
+**SMoA**（基线方法）：
+```bash
+cd emoa_large
+python3 -m emoa.serve.app_smoa --config configs/smoa.json --host 0.0.0.0 --port 10080
+```
+
+可通过以下命令验证服务是否正常运行：
+```bash
+curl http://localhost:10078/health
+```
+
+### 3. 模型评测
+
+> **关于评测方式的说明：** 论文 Table 1 中大模型池实验的结果由内部评测平台生成，该平台目前不对外开放。我们在 `emoa_large/eval/` 中提供了等效的独立评测套件，使用完全开源的工具复现了相同的基准测试、评测指标与实验结果。
+
+`emoa_large/eval/` 目录包含了复现论文大模型池实验所需的全部内容。
+
+**第一步——安装评测依赖：**
+```bash
+pip install openai
+pip install lawrouge          # 用于 RougeMetric（lcsts）
+pip install pkuseg nltk       # 用于 GEC F1（nlpcc2018_task2, conll2014）
+```
+
+GEC F1 评测还需要安装 `m2scorer`：
+```bash
+git clone https://github.com/nusnlp/m2scorer
+export PYTHONPATH=/path/to/m2scorer:$PYTHONPATH
+```
+
+**第二步——对运行中的服务进行推理：**
+```bash
+cd emoa_large/eval
+python inference.py \
+    --base_url  http://localhost:10079/v1 \
+    --api_key   dummy \
+    --model     routemoa \
+    --input     benchmark_questions.json \
+    --output    predictions_routemoa.json \
+    --workers   4
+```
+
+**第三步——评估预测结果：**
+```bash
+python evaluate.py \
+    --predictions     predictions_routemoa.json \
+    --benchmark       benchmark_questions.json \
+    --output          eval_results_routemoa.json \
+    --judge_base_url  https://api.openai.com/v1 \
+    --judge_api_key   YOUR_OPENAI_KEY \
+    --judge_model     gpt-4o
+```
+
+脚本会在终端输出各数据集的得分、各类别平均分以及全局平均分。
+
+> **预计算结果：** `emoa_large/eval/` 目录中已提供三种方法的完整推理结果（`moa.json`、`routemoa.json`、`smoa.json`）及跨模型汇总（`summary_all.json`）。详细的基准测试说明和论文结果请参见 `emoa_large/eval/README.md`。
 
 ---
 

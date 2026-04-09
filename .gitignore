@@ -215,3 +215,8 @@ __marimo__/
 ## checkpoint folder
 checkpoints/
 
+## model weights (large binary files)
+*.pth
+*.bin
+*.safetensors
+

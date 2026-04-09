@@ -1,0 +1,17 @@
+{
+    "model": "smoa",
+    "agg_model": "deepseek-ai/DeepSeek-V3-0324",
+    "temperature": 0,
+    "max_tokens": 8192,
+    "timeout": 1000,
+    "rounds": 3,
+    "stream": false,
+    "api_info": "configs/api_info.csv",
+    "add_role": true,
+    "moderate_select": true,
+    "moderate_end": true,
+    "num_select_response": 3,
+    "judge_prompt_file": "configs/moderator_prompt.txt",
+    "aggregation_prompt_file": "configs/agg_generation_prompt.txt",
+    "role_prompt_file": "configs/role_generation_prompt.txt"
+}

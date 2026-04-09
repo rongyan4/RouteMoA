@@ -1,0 +1,14 @@
+openai
+fire
+loguru
+datasets
+typer
+rich
+slowapi
+uvicorn
+fastapi
+pydantic
+torch
+transformers
+pandas
+tiktoken
