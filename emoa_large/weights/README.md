@@ -6,7 +6,7 @@ The router weight file for the large model pool (`router_large.pth`) is not incl
 
 Download the pre-trained router weights from Google Drive:
 
-**[router_large.pth — Google Drive](YOUR_GOOGLE_DRIVE_LINK_HERE)**
+**[router_large.pth — Google Drive](https://drive.google.com/file/d/1ixpMzKtw52OIG3pJKviY19iW29BGJHpx/view?usp=drive_link)**
 
 After downloading, place the file in this directory:
 
