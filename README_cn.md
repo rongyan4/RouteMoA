@@ -6,6 +6,12 @@
 
 欢迎来到 **RouteMoA** 的官方仓库。本项目提出了一种高效的动态路由机制，旨在不依赖预推理（Pre-Inference）步骤的情况下，大幅提升混合智能体（Mixture-of-Agents, MoA）架构的效率与性能。
 
+<p align="center">
+  <img src="asset/compare.png" alt="RouteMoA 与现有 MoA 方法的概念对比。" width="100%">
+  <br>
+  <em>Concept comparison between our RouteMoA and previous MoA-based methods.</em>
+</p>
+
 ---
 
 ## 目录

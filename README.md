@@ -6,6 +6,12 @@ English | [简体中文](README_cn.md)
 
 Welcome to the official repository for **RouteMoA**. This project introduces an efficient and dynamic routing mechanism designed to boost the performance of Mixture-of-Agents (MoA) architectures without relying on pre-inference steps.
 
+<p align="center">
+  <img src="asset/compare.png" alt="Concept comparison between our RouteMoA and previous MoA-based methods." width="100%">
+  <br>
+  <em>Concept comparison between our RouteMoA and previous MoA-based methods.</em>
+</p>
+
 ---
 
 ## Table of Contents
