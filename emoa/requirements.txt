@@ -1,0 +1,13 @@
+openai
+fire
+loguru
+datasets
+typer
+rich
+
+slowapi
+dashscope
+anthropic
+uvicorn
+fastapi
+sentencepiece

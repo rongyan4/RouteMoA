@@ -1,0 +1,5 @@
+model,input_price,output_price,context_window,max_output_tokens
+Qwen/Qwen2.5-72B-Instruct,0.23,0.4,128000,128000
+Qwen/Qwen2.5-7B-Instruct,0.025,0.05,128000,128000
+nvidia/Llama-3.1-Nemotron-70B-Instruct-HF,0.12,0.3,128000,128000
+mistralai/Ministral-8B-Instruct-2410,0.1,0.1,128000,128000

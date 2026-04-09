@@ -1,0 +1,16 @@
+model,input_price,output_price,context_window,max_output_tokens
+gpt-4o-2024-11-20,2.5,10,128000,16384
+claude-3-5-sonnet-20241022,3,15,200000,8192
+mistralai/Mistral-Large-Instruct-2411,2,6,128000,128000
+meta-llama/Llama-3.3-70B-Instruct,0.12,0.3,131072,131072
+alpindale/WizardLM-2-8x22B,0.5,0.5,65536,65536
+deepseek-ai/DeepSeek-R1-Distill-Llama-8B,0.04,0.12,131072,131072
+google/gemma-2-9b-it,0.03,0.06,8192,4096
+mistralai/Ministral-8B-Instruct-2410,0.1,0.1,128000,128000
+Qwen/Qwen2.5-7B-Instruct,0.025,0.05,33000,33000
+01-ai/Yi-1.5-9B-Chat-16K,0.03,0.06,16000,16000
+mistralai/Mamba-Codestral-7B-v0.1,0.25,0.25,256000,256000
+Qwen/Qwen2.5-Coder-7B-Instruct,0.025,0.05,33000,33000
+Qwen/Qwen2.5-Math-7B-Instruct,0.025,0.05,33000,33000
+hfl/llama-3-chinese-8b-instruct-v3,0.03,0.06,8192,4096
+ContactDoctor/Bio-Medical-Llama-3-8B,0.03,0.06,8192,4096
