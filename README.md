@@ -4,7 +4,7 @@ English | [简体中文](README_cn.md)
 
 **[ACL 2026] RouteMoA: Dynamic Routing without Pre-Inference Boosts Efficient Mixture-of-Agents**
 
-Welcome to the official repository for **RouteMoA**. This project introduces an efficient and dynamic routing mechanism designed to boost the performance of Mixture-of-Agents (MoA) architectures without relying on pre-inference steps.
+Welcome to the official repository for **RouteMoA** ([Paper link](https://arxiv.org/abs/2601.18130)). This project introduces an efficient and dynamic routing mechanism designed to boost the performance of Mixture-of-Agents (MoA) architectures without relying on pre-inference steps.
 
 <p align="center">
   <img src="asset/compare.png" alt="Concept comparison between our RouteMoA and previous MoA-based methods." width="100%">

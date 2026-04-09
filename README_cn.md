@@ -4,7 +4,7 @@
 
 **[ACL 2026] RouteMoA: Dynamic Routing without Pre-Inference Boosts Efficient Mixture-of-Agents**
 
-欢迎来到 **RouteMoA** 的官方仓库。本项目提出了一种高效的动态路由机制，旨在不依赖预推理（Pre-Inference）步骤的情况下，大幅提升混合智能体（Mixture-of-Agents, MoA）架构的效率与性能。
+欢迎来到 **RouteMoA** 的官方仓库 ([论文链接](https://arxiv.org/abs/2601.18130))。本项目提出了一种高效的动态路由机制，旨在不依赖预推理（Pre-Inference）步骤的情况下，大幅提升混合智能体（Mixture-of-Agents, MoA）架构的效率与性能。
 
 <p align="center">
   <img src="asset/compare.png" alt="RouteMoA 与现有 MoA 方法的概念对比。" width="100%">
