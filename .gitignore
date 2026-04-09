@@ -205,3 +205,18 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+## macOS
+.DS_Store
+
+## Qoder IDE
+.qoder/
+
+## checkpoint folder
+checkpoints/
+
+## model weights (large binary files)
+*.pth
+*.bin
+*.safetensors
+

@@ -1,0 +1,959 @@
+{
+  "metadata": {
+    "description": "Cross-model evaluation summary on paper-selected benchmarks. Organized by category -> dataset -> per-model metrics. global_avg: macro avg over all 30 datasets equally. global_avg_by_category: macro avg over 5 categories equally (each category averaged first). category_avg: per-category macro avg over datasets within that category.",
+    "models": {
+      "moa": "MoA (baseline)",
+      "routemoa": "RouteMoA (ours)",
+      "smoa": "SMoA (baseline)"
+    },
+    "categories": [
+      "Language Understanding",
+      "Reading & QA",
+      "Logic Reasoning",
+      "Math Reasoning",
+      "Language Generation"
+    ],
+    "created_at": "2026-04-09T12:10:29.952471",
+    "updated_at": "2026-04-09T12:17:51.114758"
+  },
+  "per_dataset": {
+    "Language Understanding": {
+      "lcqmc": {
+        "moa": {
+          "accuracy": 0.6666666666666666,
+          "latency_avg": 79.2998,
+          "cost_normalized": 299.103586,
+          "avg_cost_per_item": 0.029910358600000003,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.8,
+          "latency_avg": 15.3493,
+          "cost_normalized": 5.144979999999999,
+          "avg_cost_per_item": 0.000514498,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.6666666666666666,
+          "latency_avg": 79.5631,
+          "cost_normalized": 42.05739066666668,
+          "avg_cost_per_item": 0.004205739066666668,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "ocnli": {
+        "moa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 271.9453,
+          "cost_normalized": 427.42884733333335,
+          "avg_cost_per_item": 0.04274288473333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 67.1032,
+          "cost_normalized": 40.43135333333333,
+          "avg_cost_per_item": 0.004043135333333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.7333333333333333,
+          "latency_avg": 199.2489,
+          "cost_normalized": 71.36697200000002,
+          "avg_cost_per_item": 0.007136697200000001,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "sst2": {
+        "moa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 128.7746,
+          "cost_normalized": 306.2829873333333,
+          "avg_cost_per_item": 0.030628298733333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 17.5968,
+          "cost_normalized": 15.128559999999997,
+          "avg_cost_per_item": 0.0015128559999999997,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 60.8655,
+          "cost_normalized": 44.00364733333334,
+          "avg_cost_per_item": 0.004400364733333334,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "cola": {
+        "moa": {
+          "accuracy": 1,
+          "latency_avg": 103.8997,
+          "cost_normalized": 297.68078133333336,
+          "avg_cost_per_item": 0.029768078133333334,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 1,
+          "latency_avg": 15.3858,
+          "cost_normalized": 13.257453333333332,
+          "avg_cost_per_item": 0.0013257453333333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 1,
+          "latency_avg": 51.9552,
+          "cost_normalized": 38.51708266666666,
+          "avg_cost_per_item": 0.0038517082666666663,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "mrpc": {
+        "moa": {
+          "accuracy": 0.8,
+          "latency_avg": 88.432,
+          "cost_normalized": 296.40650666666664,
+          "avg_cost_per_item": 0.029640650666666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 85.913,
+          "cost_normalized": 41.35459333333334,
+          "avg_cost_per_item": 0.004135459333333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.8,
+          "latency_avg": 61.4274,
+          "cost_normalized": 46.74277666666667,
+          "avg_cost_per_item": 0.004674277666666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "msra": {
+        "moa": {
+          "accuracy": 0.9088888888888887,
+          "latency_avg": 184.8818,
+          "cost_normalized": 359.1077306666667,
+          "avg_cost_per_item": 0.03591077306666667,
+          "total_items": 15,
+          "metric_name": "recall"
+        },
+        "routemoa": {
+          "accuracy": 0.9088888888888887,
+          "latency_avg": 137.8307,
+          "cost_normalized": 67.69926666666666,
+          "avg_cost_per_item": 0.006769926666666666,
+          "total_items": 15,
+          "metric_name": "recall"
+        },
+        "smoa": {
+          "accuracy": 0.8955555555555555,
+          "latency_avg": 99.3693,
+          "cost_normalized": 53.916668666666666,
+          "avg_cost_per_item": 0.005391666866666667,
+          "total_items": 15,
+          "metric_name": "recall"
+        }
+      },
+      "qqp": {
+        "moa": {
+          "accuracy": 0.5333333333333333,
+          "latency_avg": 76.3964,
+          "cost_normalized": 253.80625999999998,
+          "avg_cost_per_item": 0.025380626,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.6,
+          "latency_avg": 15.2572,
+          "cost_normalized": 13.26058666666667,
+          "avg_cost_per_item": 0.001326058666666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.5333333333333333,
+          "latency_avg": 46.8374,
+          "cost_normalized": 45.589808666666656,
+          "avg_cost_per_item": 0.004558980866666665,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "sts_b": {
+        "moa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 75.1488,
+          "cost_normalized": 256.909824,
+          "avg_cost_per_item": 0.0256909824,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 26.537,
+          "cost_normalized": 18.131933333333336,
+          "avg_cost_per_item": 0.0018131933333333336,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.6,
+          "latency_avg": 40.6988,
+          "cost_normalized": 39.634574,
+          "avg_cost_per_item": 0.0039634574,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "ag_news": {
+        "moa": {
+          "accuracy": 0.8,
+          "latency_avg": 169.8726,
+          "cost_normalized": 446.6492906666668,
+          "avg_cost_per_item": 0.04466492906666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.8,
+          "latency_avg": 36.9654,
+          "cost_normalized": 19.68804666666667,
+          "avg_cost_per_item": 0.001968804666666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.8,
+          "latency_avg": 74.4631,
+          "cost_normalized": 59.430654666666676,
+          "avg_cost_per_item": 0.005943065466666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "qnli": {
+        "moa": {
+          "accuracy": 0.8,
+          "latency_avg": 78.5462,
+          "cost_normalized": 249.38635666666661,
+          "avg_cost_per_item": 0.024938635666666664,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.6666666666666666,
+          "latency_avg": 17.1672,
+          "cost_normalized": 8.850186666666668,
+          "avg_cost_per_item": 0.0008850186666666666,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.8,
+          "latency_avg": 48.7373,
+          "cost_normalized": 33.98113266666666,
+          "avg_cost_per_item": 0.0033981132666666665,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "chid_baidu": {
+        "moa": {
+          "accuracy": 1,
+          "latency_avg": 132.1945,
+          "cost_normalized": 346.310386,
+          "avg_cost_per_item": 0.034631038600000004,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 42.3067,
+          "cost_normalized": 30.931346666666666,
+          "avg_cost_per_item": 0.0030931346666666663,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 76.9629,
+          "cost_normalized": 50.377652000000005,
+          "avg_cost_per_item": 0.0050377652000000005,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      }
+    },
+    "Reading & QA": {
+      "webqa": {
+        "moa": {
+          "accuracy": 1,
+          "latency_avg": 45.4688,
+          "cost_normalized": 211.4143853333333,
+          "avg_cost_per_item": 0.02114143853333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 1,
+          "latency_avg": 11.9416,
+          "cost_normalized": 4.104973333333333,
+          "avg_cost_per_item": 0.00041049733333333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 1,
+          "latency_avg": 60.2771,
+          "cost_normalized": 29.78335866666667,
+          "avg_cost_per_item": 0.0029783358666666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "c3": {
+        "moa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 57.4078,
+          "cost_normalized": 264.07324266666666,
+          "avg_cost_per_item": 0.026407324266666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 11.5596,
+          "cost_normalized": 5.864466666666667,
+          "avg_cost_per_item": 0.0005864466666666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.8,
+          "latency_avg": 152.4231,
+          "cost_normalized": 45.250198,
+          "avg_cost_per_item": 0.0045250198,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "cmrc": {
+        "moa": {
+          "accuracy": 0.6,
+          "latency_avg": 51.6355,
+          "cost_normalized": 240.66533066666662,
+          "avg_cost_per_item": 0.024066533066666663,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.6666666666666666,
+          "latency_avg": 11.8863,
+          "cost_normalized": 6.63596,
+          "avg_cost_per_item": 0.000663596,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.6,
+          "latency_avg": 47.6316,
+          "cost_normalized": 53.759873999999996,
+          "avg_cost_per_item": 0.0053759874,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "race": {
+        "moa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 145.2816,
+          "cost_normalized": 343.01756333333327,
+          "avg_cost_per_item": 0.03430175633333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 75.6313,
+          "cost_normalized": 40.38988,
+          "avg_cost_per_item": 0.004038988,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 104.8265,
+          "cost_normalized": 53.09804866666666,
+          "avg_cost_per_item": 0.005309804866666666,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "story_cloze_test": {
+        "moa": {
+          "accuracy": 1,
+          "latency_avg": 207.2897,
+          "cost_normalized": 458.0778333333334,
+          "avg_cost_per_item": 0.04580778333333334,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 28.0559,
+          "cost_normalized": 14.050093333333331,
+          "avg_cost_per_item": 0.001405009333333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 105.1886,
+          "cost_normalized": 87.35302133333333,
+          "avg_cost_per_item": 0.008735302133333334,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      }
+    },
+    "Logic Reasoning": {
+      "cluewsc2020": {
+        "moa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 83.2661,
+          "cost_normalized": 275.9567233333334,
+          "avg_cost_per_item": 0.02759567233333334,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 1,
+          "latency_avg": 12.3872,
+          "cost_normalized": 5.27942,
+          "avg_cost_per_item": 0.000527942,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 1,
+          "latency_avg": 75.3758,
+          "cost_normalized": 39.41155666666667,
+          "avg_cost_per_item": 0.003941155666666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "winograd_wsc": {
+        "moa": {
+          "accuracy": 1,
+          "latency_avg": 216.8097,
+          "cost_normalized": 576.7915226666665,
+          "avg_cost_per_item": 0.05767915226666666,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 1,
+          "latency_avg": 99.5918,
+          "cost_normalized": 47.49863333333334,
+          "avg_cost_per_item": 0.004749863333333334,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 83.3718,
+          "cost_normalized": 82.70281933333334,
+          "avg_cost_per_item": 0.008270281933333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "truthful_qa": {
+        "moa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 102.497,
+          "cost_normalized": 303.20205,
+          "avg_cost_per_item": 0.030320205,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 64.6377,
+          "cost_normalized": 33.40915333333333,
+          "avg_cost_per_item": 0.003340915333333333,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 69.7018,
+          "cost_normalized": 49.372056,
+          "avg_cost_per_item": 0.004937205599999999,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      }
+    },
+    "Math Reasoning": {
+      "bigmath": {
+        "moa": {
+          "accuracy": 0.26666666666666666,
+          "latency_avg": 845.257,
+          "cost_normalized": 813.9163199999999,
+          "avg_cost_per_item": 0.08139163199999999,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.5333333333333333,
+          "latency_avg": 298.4999,
+          "cost_normalized": 194.56150666666662,
+          "avg_cost_per_item": 0.019456150666666665,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.4,
+          "latency_avg": 335.5756,
+          "cost_normalized": 235.3707333333334,
+          "avg_cost_per_item": 0.02353707333333334,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "gsm8k_test_100": {
+        "moa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 217.22,
+          "cost_normalized": 650.6242926666667,
+          "avg_cost_per_item": 0.06506242926666667,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 79.5504,
+          "cost_normalized": 36.99455999999999,
+          "avg_cost_per_item": 0.0036994559999999994,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.8666666666666667,
+          "latency_avg": 113.8523,
+          "cost_normalized": 133.26791333333333,
+          "avg_cost_per_item": 0.013326791333333332,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "GAOKAO-2023_Math_en": {
+        "moa": {
+          "accuracy": 0.5333333333333333,
+          "latency_avg": 374.5579,
+          "cost_normalized": 444.3324028571429,
+          "avg_cost_per_item": 0.044433240285714284,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.5333333333333333,
+          "latency_avg": 147.4418,
+          "cost_normalized": 63.855786666666674,
+          "avg_cost_per_item": 0.0063855786666666674,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.4666666666666667,
+          "latency_avg": 236.8211,
+          "cost_normalized": 84.66218071428573,
+          "avg_cost_per_item": 0.008466218071428572,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "geometry": {
+        "moa": {
+          "accuracy": 0.3333,
+          "latency_avg": 833.4626,
+          "cost_normalized": 799.2895120000001,
+          "avg_cost_per_item": 0.0799289512,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        },
+        "routemoa": {
+          "accuracy": 0.65,
+          "latency_avg": 334.3802,
+          "cost_normalized": 84.48412499999999,
+          "avg_cost_per_item": 0.0084484125,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        },
+        "smoa": {
+          "accuracy": 0.45,
+          "latency_avg": 730.3683,
+          "cost_normalized": 305.71193142857146,
+          "avg_cost_per_item": 0.030571193142857143,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        }
+      },
+      "prealgebra": {
+        "moa": {
+          "accuracy": 0.7833,
+          "latency_avg": 535.0155,
+          "cost_normalized": 785.9293869230769,
+          "avg_cost_per_item": 0.07859293869230768,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        },
+        "routemoa": {
+          "accuracy": 0.9,
+          "latency_avg": 133.7817,
+          "cost_normalized": 59.74749999999999,
+          "avg_cost_per_item": 0.005974749999999999,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        },
+        "smoa": {
+          "accuracy": 0.5333,
+          "latency_avg": 704.1564,
+          "cost_normalized": 239.99686250000002,
+          "avg_cost_per_item": 0.023999686250000003,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        }
+      },
+      "precalculus": {
+        "moa": {
+          "accuracy": 0.2,
+          "latency_avg": 911.5353,
+          "cost_normalized": 1012.4176899999998,
+          "avg_cost_per_item": 0.10124176899999998,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        },
+        "routemoa": {
+          "accuracy": 0.85,
+          "latency_avg": 274.5411,
+          "cost_normalized": 128.12012857142858,
+          "avg_cost_per_item": 0.012812012857142858,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        },
+        "smoa": {
+          "accuracy": 0.4667,
+          "latency_avg": 706.3153,
+          "cost_normalized": 396.23924428571434,
+          "avg_cost_per_item": 0.03962392442857143,
+          "total_items": 15,
+          "metric_name": "norm_score"
+        }
+      }
+    },
+    "Language Generation": {
+      "word_manipulation_v2": {
+        "moa": {
+          "accuracy": 0.4666666666666667,
+          "latency_avg": 570.3259,
+          "cost_normalized": 872.1750133333335,
+          "avg_cost_per_item": 0.08721750133333335,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.9333333333333332,
+          "latency_avg": 286.6417,
+          "cost_normalized": 208.58482666666663,
+          "avg_cost_per_item": 0.020858482666666664,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.26666666666666666,
+          "latency_avg": 818.8468,
+          "cost_normalized": 313.98211499999996,
+          "avg_cost_per_item": 0.031398211499999995,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "nlpcc2017_task2": {
+        "moa": {
+          "accuracy": 0.6,
+          "latency_avg": 88.4507,
+          "cost_normalized": 311.42287999999996,
+          "avg_cost_per_item": 0.031142287999999997,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "routemoa": {
+          "accuracy": 0.7333333333333333,
+          "latency_avg": 50.91,
+          "cost_normalized": 30.682786666666665,
+          "avg_cost_per_item": 0.0030682786666666666,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        },
+        "smoa": {
+          "accuracy": 0.7333333333333333,
+          "latency_avg": 93.4593,
+          "cost_normalized": 47.140283999999994,
+          "avg_cost_per_item": 0.0047140284,
+          "total_items": 15,
+          "metric_name": "accuracy"
+        }
+      },
+      "lcsts": {
+        "moa": {
+          "accuracy": 0.5542968113334246,
+          "latency_avg": 272.9793,
+          "cost_normalized": 451.14579333333336,
+          "avg_cost_per_item": 0.045114579333333335,
+          "total_items": 15,
+          "metric_name": "rouge_1"
+        },
+        "routemoa": {
+          "accuracy": 0.518175788318809,
+          "latency_avg": 23.3695,
+          "cost_normalized": 7.82712,
+          "avg_cost_per_item": 0.000782712,
+          "total_items": 15,
+          "metric_name": "rouge_1"
+        },
+        "smoa": {
+          "accuracy": 0.485299419201021,
+          "latency_avg": 168.2997,
+          "cost_normalized": 73.31876266666667,
+          "avg_cost_per_item": 0.007331876266666666,
+          "total_items": 15,
+          "metric_name": "rouge_1"
+        }
+      },
+      "nlpcc2018_task2": {
+        "moa": {
+          "accuracy": 0.21631974263553208,
+          "latency_avg": 142.8782,
+          "cost_normalized": 357.4651493333334,
+          "avg_cost_per_item": 0.03574651493333334,
+          "total_items": 15,
+          "metric_name": "f1"
+        },
+        "routemoa": {
+          "accuracy": 0.16590703035715826,
+          "latency_avg": 35.4942,
+          "cost_normalized": 12.358726666666666,
+          "avg_cost_per_item": 0.0012358726666666666,
+          "total_items": 15,
+          "metric_name": "f1"
+        },
+        "smoa": {
+          "accuracy": 0.20713197951049617,
+          "latency_avg": 80.0937,
+          "cost_normalized": 53.27553,
+          "avg_cost_per_item": 0.0053275530000000005,
+          "total_items": 15,
+          "metric_name": "f1"
+        }
+      },
+      "conll2014": {
+        "moa": {
+          "accuracy": 0.25635209727281333,
+          "latency_avg": 220.0491,
+          "cost_normalized": 395.14230866666674,
+          "avg_cost_per_item": 0.03951423086666668,
+          "total_items": 15,
+          "metric_name": "f1"
+        },
+        "routemoa": {
+          "accuracy": 0.24409437635244088,
+          "latency_avg": 150.1444,
+          "cost_normalized": 68.94503333333334,
+          "avg_cost_per_item": 0.006894503333333334,
+          "total_items": 15,
+          "metric_name": "f1"
+        },
+        "smoa": {
+          "accuracy": 0.3230537493695388,
+          "latency_avg": 124.5642,
+          "cost_normalized": 64.52790399999999,
+          "avg_cost_per_item": 0.0064527904,
+          "total_items": 15,
+          "metric_name": "f1"
+        }
+      }
+    }
+  },
+  "category_avg": {
+    "Language Understanding": {
+      "moa": {
+        "accuracy_macro_avg": 0.834141,
+        "latency_avg_macro_avg": 126.3083,
+        "cost_normalized_macro_avg": 321.7339,
+        "num_datasets": 11
+      },
+      "routemoa": {
+        "accuracy_macro_avg": 0.840202,
+        "latency_avg_macro_avg": 43.4011,
+        "cost_normalized_macro_avg": 24.898,
+        "num_datasets": 11
+      },
+      "smoa": {
+        "accuracy_macro_avg": 0.784444,
+        "latency_avg_macro_avg": 76.3754,
+        "cost_normalized_macro_avg": 47.7835,
+        "num_datasets": 11
+      }
+    },
+    "Reading & QA": {
+      "moa": {
+        "accuracy_macro_avg": 0.88,
+        "latency_avg_macro_avg": 101.4167,
+        "cost_normalized_macro_avg": 303.4497,
+        "num_datasets": 5
+      },
+      "routemoa": {
+        "accuracy_macro_avg": 0.88,
+        "latency_avg_macro_avg": 27.8149,
+        "cost_normalized_macro_avg": 14.2091,
+        "num_datasets": 5
+      },
+      "smoa": {
+        "accuracy_macro_avg": 0.853333,
+        "latency_avg_macro_avg": 94.0694,
+        "cost_normalized_macro_avg": 53.8489,
+        "num_datasets": 5
+      }
+    },
+    "Logic Reasoning": {
+      "moa": {
+        "accuracy_macro_avg": 0.933333,
+        "latency_avg_macro_avg": 134.1909,
+        "cost_normalized_macro_avg": 385.3168,
+        "num_datasets": 3
+      },
+      "routemoa": {
+        "accuracy_macro_avg": 0.955556,
+        "latency_avg_macro_avg": 58.8722,
+        "cost_normalized_macro_avg": 28.7291,
+        "num_datasets": 3
+      },
+      "smoa": {
+        "accuracy_macro_avg": 0.911111,
+        "latency_avg_macro_avg": 76.1498,
+        "cost_normalized_macro_avg": 57.1621,
+        "num_datasets": 3
+      }
+    },
+    "Math Reasoning": {
+      "moa": {
+        "accuracy_macro_avg": 0.497211,
+        "latency_avg_macro_avg": 619.5081,
+        "cost_normalized_macro_avg": 751.0849,
+        "num_datasets": 6
+      },
+      "routemoa": {
+        "accuracy_macro_avg": 0.733333,
+        "latency_avg_macro_avg": 211.3658,
+        "cost_normalized_macro_avg": 94.6273,
+        "num_datasets": 6
+      },
+      "smoa": {
+        "accuracy_macro_avg": 0.530556,
+        "latency_avg_macro_avg": 471.1815,
+        "cost_normalized_macro_avg": 232.5415,
+        "num_datasets": 6
+      }
+    },
+    "Language Generation": {
+      "moa": {
+        "accuracy_macro_avg": 0.418727,
+        "latency_avg_macro_avg": 258.9366,
+        "cost_normalized_macro_avg": 477.4702,
+        "num_datasets": 5
+      },
+      "routemoa": {
+        "accuracy_macro_avg": 0.518969,
+        "latency_avg_macro_avg": 109.312,
+        "cost_normalized_macro_avg": 65.6797,
+        "num_datasets": 5
+      },
+      "smoa": {
+        "accuracy_macro_avg": 0.403097,
+        "latency_avg_macro_avg": 257.0527,
+        "cost_normalized_macro_avg": 110.4489,
+        "num_datasets": 5
+      }
+    }
+  },
+  "global_avg": {
+    "moa": {
+      "accuracy_macro_avg": 0.715082,
+      "latency_avg_macro_avg": 243.6926,
+      "cost_normalized_macro_avg": 436.8711,
+      "num_datasets": 30,
+      "description": "Macro average directly over all 30 datasets (equal weight per dataset)"
+    },
+    "routemoa": {
+      "accuracy_macro_avg": 0.783458,
+      "latency_avg_macro_avg": 86.9286,
+      "cost_normalized_macro_avg": 44.2424,
+      "num_datasets": 30,
+      "description": "Macro average directly over all 30 datasets (equal weight per dataset)"
+    },
+    "smoa": {
+      "accuracy_macro_avg": 0.694257,
+      "latency_avg_macro_avg": 188.3759,
+      "cost_normalized_macro_avg": 97.1281,
+      "num_datasets": 30,
+      "description": "Macro average directly over all 30 datasets (equal weight per dataset)"
+    }
+  },
+  "global_avg_by_category": {
+    "moa": {
+      "accuracy_macro_avg": 0.712682,
+      "latency_avg_macro_avg": 248.0721,
+      "cost_normalized_macro_avg": 447.8111,
+      "num_categories": 5,
+      "description": "Macro average over 5 categories (equal weight per category, each category is averaged over its datasets first)"
+    },
+    "routemoa": {
+      "accuracy_macro_avg": 0.785612,
+      "latency_avg_macro_avg": 90.1532,
+      "cost_normalized_macro_avg": 45.6286,
+      "num_categories": 5,
+      "description": "Macro average over 5 categories (equal weight per category, each category is averaged over its datasets first)"
+    },
+    "smoa": {
+      "accuracy_macro_avg": 0.696508,
+      "latency_avg_macro_avg": 194.9658,
+      "cost_normalized_macro_avg": 100.357,
+      "num_categories": 5,
+      "description": "Macro average over 5 categories (equal weight per category, each category is averaged over its datasets first)"
+    }
+  }
+}

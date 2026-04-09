@@ -1,0 +1,24 @@
+{
+    "model": "moa_mixed_models",
+    "candidate_models": [
+        "google/gemma-2-9b-it",
+        "mistralai/Ministral-8B-Instruct-2410",
+        "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "Qwen/Qwen2.5-Math-7B-Instruct",
+        "ContactDoctor/Bio-Medical-Llama-3-8B"
+    ],
+    "agg_model":"Qwen/Qwen2.5-Coder-7B-Instruct",
+    "mode": "smoa",
+    "temperature": 0,
+    "max_tokens": 8192,
+    "rounds": 3,
+    "stream": false,
+    "api_info": "/home/1002/wangjize/wuhan/RouteMoA/emoa/configs/api_info_v2_smoa.csv",
+    "add_role": true,
+    "moderate_select": true,
+    "moderate_end": true,
+    "num_select_response": 3,
+    "judge_prompt_file":"/home/1002/wangjize/wuhan/RouteMoA/emoa/smoa_data/prompt/moderator_prompt.txt",
+    "aggregation_prompt_file":"/home/1002/wangjize/wuhan/RouteMoA/emoa/smoa_data/prompt/agg_generation_prompt.txt",
+    "role_prompt_file":"/home/1002/wangjize/wuhan/RouteMoA/emoa/smoa_data/prompt/role_generation_prompt.txt"
+}
